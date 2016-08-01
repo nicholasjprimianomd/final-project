@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DeathTrigger : MonoBehaviour {
+public class RCDeathTrigger : MonoBehaviour {
 
 
 	void OnTriggerEnter2D( Collider2D activator ) {

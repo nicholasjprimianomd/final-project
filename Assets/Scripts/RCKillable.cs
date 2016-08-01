@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Killable : MonoBehaviour {
+public class RCKillable : MonoBehaviour {
 
 	public int maxHealth = 100;
 	public int currentHealth = 0;

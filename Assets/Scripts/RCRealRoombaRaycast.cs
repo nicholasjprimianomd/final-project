@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RealRoombaRaycast : MonoBehaviour
+public class RCRealRoombaRaycast : MonoBehaviour
 {
 
 
