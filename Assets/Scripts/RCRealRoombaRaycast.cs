@@ -11,8 +11,11 @@ public class RCRealRoombaRaycast : MonoBehaviour
 	private bool isActive;
 	private bool isTiming;
 
+
 	void Start ()
 	{
+		canMoveLaser = true;
+
 		isActive = true;
 		isTiming = false;
 	}
@@ -56,7 +59,7 @@ public class RCRealRoombaRaycast : MonoBehaviour
 
 		RaycastHit2D roombahit = Physics2D.Raycast (transform.position, transform.up, 0.4f); //shoots raycast
 
-		if (roombahit.collider != null) { //if raycast hits something 
+		if (roombahit.collider != null && roombahit.collider.gameObject.tag != "Zombie") { //if raycast hits something 
 			float randomNumber = Random.Range (0f, 1f); //turn randomly 90 degreees left or right
 			if (randomNumber > 0.5f) {
 				transform.Rotate (0f, 0f, 90f);
@@ -66,5 +69,6 @@ public class RCRealRoombaRaycast : MonoBehaviour
 		} else { //if raycast hits nothing, always go forward
 			transform.position += transform.up * Time.deltaTime;
 		}
+
 	}
 }
