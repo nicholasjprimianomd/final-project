@@ -8,6 +8,7 @@ public class PlayerGrapple : MonoBehaviour {
 	public float xOffset = 0;
 	public float yOffset = 1;
 	public float bulletSpeed = 25;
+	public bool isLerping = false;
 
 	void Update ()
 	{
