@@ -9,7 +9,7 @@ public class Grapple : MonoBehaviour
 	public float speed = .5F;
 	private GameObject player;
 	private GameObject enemy;
-	private bool isLerping = false;
+	public bool isLerping = false;
 	private bool isWall = false;
 	private bool isEnemy = false;
 	private bool canCollide;
@@ -28,6 +28,7 @@ public class Grapple : MonoBehaviour
 			player.transform.position = Vector3.MoveTowards (startMarker.position, endMarker.position, .5f);
 			if (player.transform.position == endMarker.position) {
 				isLerping = false;
+				player.GetComponent<PlayerGrapple> ().isLerping = false;
 				isWall = false;
 				gameObject.SetActive (false);
 			}
@@ -37,6 +38,7 @@ public class Grapple : MonoBehaviour
 			enemy.transform.position = Vector3.MoveTowards (enemy.transform.position, player.transform.position, .15f);
 			if (Vector3.Distance (enemy.transform.position, player.transform.position) < 1f) {
 				isLerping = false;
+				player.GetComponent<PlayerGrapple> ().isLerping = false;
 				isEnemy = false;
 				//Check for following zombie
 				if (enemy.GetComponent<ZombieMove> () != null) {
@@ -60,6 +62,7 @@ public class Grapple : MonoBehaviour
 				startMarker = player.transform;
 				endMarker = transform;
 				isLerping = true;
+				player.GetComponent<PlayerGrapple> ().isLerping = true;
 				isWall = true;
 				canCollide = false;
 			}
@@ -74,6 +77,7 @@ public class Grapple : MonoBehaviour
 
 				enemy = coll.gameObject;
 				isLerping = true;
+				player.GetComponent<PlayerGrapple> ().isLerping = true;
 				isEnemy = true;
 
 				//Check for following zombie
