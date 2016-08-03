@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Diagnostics;
-using UnityEngine.Rendering;
+
+// why were you importing these namespaces?
+//using System.Diagnostics;
+//using UnityEngine.Rendering;
 
 
 public class PlayerShoot : MonoBehaviour
 {
-
+	// you can declare multiple public vars in one line like this, as long as you don't init with a value
+	// public GameObject bullet, burstBullet;
 	public GameObject bullet;
 	public GameObject burstBullet;
 	public Transform spawnPoint;
@@ -22,8 +25,10 @@ public class PlayerShoot : MonoBehaviour
 
 	private float currentTime;
 
+	// it's kind of weird that shoot vs. burst have separate cooldowns? they should probably share a cooldown timer
 	private bool offCoolDown;
 	private float coolDown;
+
 	public float shootCoolDown = .5f;
 
 	private bool burstOffCoolDown;
@@ -52,7 +57,8 @@ public class PlayerShoot : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.R) && ammo > 0) {
 			reload ();
 		}
-
+		
+		// strongly recommend moving "Input.GetMouseButtonDown" etc. Input checks into Update instead
 		if (canShoot && rounds > 0 && offCoolDown) {
 			shoot ();
 		}
