@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RCDeathTrigger : MonoBehaviour {
+public class RCDeathTrigger : MonoBehaviour
+{
 
 
-	void OnTriggerEnter2D( Collider2D activator ) {
-		if ( activator.gameObject.tag == "Player") {
-			Destroy( activator.gameObject );
+	void OnCollisionEnter2D (Collision2D activator)
+	{
+		if (activator.gameObject.tag == "Player") {
+			Destroy (activator.gameObject);
 
 		}
 	}
 
-	void OnTriggerStay2D( Collider2D activator ) {
-			if ( activator.gameObject.tag == "Player") {
-				Destroy( activator.gameObject );
+	void OnCollisionStay2D (Collision2D activator)
+	{
+		if (activator.gameObject.tag == "Player") {
+			Destroy (activator.gameObject);
 		} 
-}
+	}
 }
