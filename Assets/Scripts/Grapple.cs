@@ -18,11 +18,16 @@ public class Grapple : MonoBehaviour
 	void Awake ()
 	{
 		canCollide = true;
+		
+	}
+	
+	void Start(){
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
 	void Update ()
 	{
-		player = GameObject.FindGameObjectWithTag ("Player");
+		
 
 		if (isLerping && isWall) {
 			player.transform.position = Vector3.MoveTowards (startMarker.position, endMarker.position, .5f);
