@@ -34,15 +34,21 @@ public class PlayerTakeDamage : MonoBehaviour
 	void OnTriggerEnter2D (Collider2D coll)
 	{
 		if (coll.gameObject.tag == "Zombie") {
-			print ("1");
 			if (currentShield > 0) {
 				currentShield -= 1;
-				print ("2");
 			} else {
 				currentHealth -= 1;
-				print ("3");
 			}
 		}
+		if (coll.gameObject.tag == "Fire") {
+			if (currentShield > 0) {
+				currentShield -= 1;
+			} else {
+				currentHealth -= 1;
+			}
+		}
+
+
 	}
 
 	void incShield ()

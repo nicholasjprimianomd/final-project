@@ -14,8 +14,6 @@ public class RCRealRoombaRaycast : MonoBehaviour
 
 	void Start ()
 	{
-		canMoveLaser = true;
-
 		isActive = true;
 		isTiming = false;
 	}
@@ -57,17 +55,20 @@ public class RCRealRoombaRaycast : MonoBehaviour
 		}
 
 
-		RaycastHit2D roombahit = Physics2D.Raycast (transform.position, transform.up, 0.4f); //shoots raycast
-
-		if (roombahit.collider != null && roombahit.collider.gameObject.tag != "Zombie") { //if raycast hits something 
-			float randomNumber = Random.Range (0f, 1f); //turn randomly 90 degreees left or right
-			if (randomNumber > 0.5f) {
-				transform.Rotate (0f, 0f, 90f);
+		// let's shoot a very short small raycast in front of us
+		RaycastHit2D roombaHit = Physics2D.Raycast (transform.position, transform.up, 0.2f);
+		// if the raycast hit something...
+		if (roombaHit.collider != null) {
+			// turn randomly 90 degrees left or right
+			float randomNumber = Random.Range (0f, 1f);
+			if (randomNumber > 0.5f) { // 50% chance to turn left
+				transform.Rotate (0f, 0f, Random.Range (0f, 90f));
 			} else {
-				transform.Rotate (0f, 0f, -90f);
+				transform.Rotate (0f, 0f, Random.Range (-90f, 0f));
 			}
-		} else { //if raycast hits nothing, always go forward
-			transform.position += transform.up * Time.deltaTime;
+		} else { // if the raycast hit NOTHING...
+			// always go "forward" along it's local Up direction
+			transform.position += transform.up * Time.deltaTime * 2f;
 		}
 
 	}
