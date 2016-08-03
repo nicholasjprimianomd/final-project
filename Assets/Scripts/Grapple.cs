@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Grapple : MonoBehaviour {
+public class Grapple : MonoBehaviour
+{
 
 	private Transform startMarker;
 	private Transform endMarker;
@@ -14,16 +15,18 @@ public class Grapple : MonoBehaviour {
 	private bool canCollide;
 	private MoveEnemy movingEnemy;
 
-	void Awake() {
+	void Awake ()
+	{
 		canCollide = true;
 	}
 
-	void Update() {
+	void Update ()
+	{
 		player = GameObject.FindGameObjectWithTag ("Player");
 
 		if (isLerping && isWall) {
 			player.transform.position = Vector3.MoveTowards (startMarker.position, endMarker.position, .5f);
-			if(player.transform.position == endMarker.position){
+			if (player.transform.position == endMarker.position) {
 				isLerping = false;
 				player.GetComponent<PlayerGrapple> ().isLerping = false;
 				isWall = false;
@@ -33,7 +36,7 @@ public class Grapple : MonoBehaviour {
 
 		if (isLerping && isEnemy) {
 			enemy.transform.position = Vector3.MoveTowards (enemy.transform.position, player.transform.position, .15f);
-			if(Vector3.Distance (enemy.transform.position, player.transform.position) < 1f){
+			if (Vector3.Distance (enemy.transform.position, player.transform.position) < 1f) {
 				isLerping = false;
 				player.GetComponent<PlayerGrapple> ().isLerping = false;
 				isEnemy = false;
@@ -43,7 +46,7 @@ public class Grapple : MonoBehaviour {
 				}
 
 				//Start static moving Zombie again
-				if(movingEnemy!= null){
+				if (movingEnemy != null) {
 					movingEnemy.enemyCanMove = true;
 				}
 
@@ -51,7 +54,7 @@ public class Grapple : MonoBehaviour {
 			}
 		}
 	}
-		
+
 	void OnCollisionEnter2D (Collision2D coll)
 	{
 		if (canCollide) {
@@ -65,8 +68,9 @@ public class Grapple : MonoBehaviour {
 			}
 
 			if (coll.gameObject.tag == "Zombie") {
+				print ("Grapple");
 				//Check for static moving zombie
-				if(coll.gameObject.GetComponent<MoveEnemy>() != null){
+				if (coll.gameObject.GetComponent<MoveEnemy> () != null) {
 					movingEnemy = coll.gameObject.GetComponent<MoveEnemy> ();
 					movingEnemy.enemyCanMove = false;
 				}
