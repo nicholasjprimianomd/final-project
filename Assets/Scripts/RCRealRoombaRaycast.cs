@@ -14,7 +14,6 @@ public class RCRealRoombaRaycast : MonoBehaviour
 
 	void Start ()
 	{
-		canMoveLaser = true;
 
 		isActive = true;
 		isTiming = false;

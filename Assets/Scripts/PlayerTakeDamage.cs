@@ -31,7 +31,7 @@ public class PlayerTakeDamage : MonoBehaviour
 		incShield ();
 	}
 
-	void OnTriggerEnter2D (Collider2D coll)
+	void OnCollisionEnter2D (Collision2D coll)
 	{
 		if (coll.gameObject.tag == "Zombie") {
 			print ("1");
