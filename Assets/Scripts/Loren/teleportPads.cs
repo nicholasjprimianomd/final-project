@@ -3,23 +3,21 @@ using System.Collections;
 
 public class teleportPads : MonoBehaviour {
 	public GameObject partner;
-	public Vector3 newLocation;
+	public float xcoordsLanding = 1f;
+	public float ycoordsLanding = 1f;
+
 
 	void Start(){
-		//Vector3 newLocation = partner.transform.position;
+		//Transform newLocation = partner.transform;
 	}
 
 	void Update(){
 		
-		Vector3 newLocation = partner.transform.position;
-		if (partner.transform.position == null) {
-			Debug.Log ("Null");
-		}
 	}
 
 	void OnTriggerEnter2D( Collider2D activator){
 		if (activator.GetComponent<teleportable> () != null) {
-			activator.transform.position = newLocation;
+			activator.transform.position = partner.transform.position+ new Vector3(xcoordsLanding,ycoordsLanding,0f);
 		}
 
 	}

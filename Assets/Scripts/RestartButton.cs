@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class RrestartButton : MonoBehaviour
+public class RestartButton : MonoBehaviour
 {
 	// Update is called once per frame
 	void Update ()

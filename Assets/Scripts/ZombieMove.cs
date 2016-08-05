@@ -21,7 +21,7 @@ public class ZombieMove : MonoBehaviour
 	{
 		destination = GameObject.FindGameObjectWithTag ("Player").transform;
 
-		if (Vector3.Distance (transform.position, destination.position) > 1f && canMove && !stun) {
+		if (Vector3.Distance (transform.position, destination.position) > .5f && canMove && !stun) {
 			transform.position += Vector3.Normalize (destination.position - transform.position) * Time.deltaTime * zombieMoveSpeed;
 		}
 	

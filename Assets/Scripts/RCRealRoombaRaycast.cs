@@ -14,6 +14,10 @@ public class RCRealRoombaRaycast : MonoBehaviour
 
 	void Start ()
 	{
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7cf3e1ef01d835aa9a2f50ac39f7d2d7955e8ed4
 		isActive = true;
 		isTiming = false;
 	}
