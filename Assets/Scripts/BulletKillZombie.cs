@@ -5,6 +5,15 @@ public class BulletKillZombie : MonoBehaviour
 {
 	GameObject score;
 	Timer gameScore;
+	//AudioSource audio;
+
+
+	void Start ()
+	{
+		//audio = GetComponent<AudioSource> ();
+
+	}
+
 
 	void Update ()
 	{
@@ -16,9 +25,11 @@ public class BulletKillZombie : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "Zombie") {
 			gameScore.score = gameScore.score + 5;
-			//Debug.Log (gameScore);
+
 			Destroy (coll.gameObject);
-			Destroy (gameObject);
+
+			//spr.enabled = false;
+			//Destroy (gameObject);
 		}
 
 	}

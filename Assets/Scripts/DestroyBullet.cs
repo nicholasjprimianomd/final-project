@@ -3,6 +3,14 @@ using System.Collections;
 
 public class DestroyBullet : MonoBehaviour
 {
+	SpriteRenderer spr;
+	TrailRenderer trail;
+
+	void Start ()
+	{
+		spr = GetComponent<SpriteRenderer> ();
+		trail = GetComponentInChildren<TrailRenderer> ();
+	}
 
 	void Update ()
 	{
@@ -13,8 +21,7 @@ public class DestroyBullet : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D coll)
 	{
-
-		Destroy (gameObject);
-		
+		spr.enabled = false;
+		trail.enabled = false;
 	}
 }

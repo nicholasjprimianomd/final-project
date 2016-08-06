@@ -14,15 +14,18 @@ public class Grapple : MonoBehaviour
 	private bool isEnemy = false;
 	private bool canCollide;
 	private MoveEnemy movingEnemy;
+	private GrappleWallSound playLandSound;
 
 	void Awake ()
 	{
 		canCollide = true;
-		
+
 	}
-	
-	void Start(){
+
+	void Start ()
+	{
 		player = GameObject.FindGameObjectWithTag ("Player");
+		playLandSound = FindObjectOfType<GrappleWallSound> ();
 	}
 
 	void Update ()
@@ -33,6 +36,7 @@ public class Grapple : MonoBehaviour
 			player.transform.position = Vector3.MoveTowards (startMarker.position, endMarker.position, .5f);
 			if (player.transform.position == endMarker.position) {
 				isLerping = false;
+				playLandSound.playLandSound ();
 				player.GetComponent<PlayerGrapple> ().isLerping = false;
 				isWall = false;
 				gameObject.SetActive (false);
@@ -42,6 +46,7 @@ public class Grapple : MonoBehaviour
 		if (isLerping && isEnemy) {
 			enemy.transform.position = Vector3.MoveTowards (enemy.transform.position, player.transform.position, .15f);
 			if (Vector3.Distance (enemy.transform.position, player.transform.position) < 1f) {
+				playLandSound.playLandSound ();
 				isLerping = false;
 				player.GetComponent<PlayerGrapple> ().isLerping = false;
 				isEnemy = false;
@@ -73,7 +78,6 @@ public class Grapple : MonoBehaviour
 			}
 
 			if (coll.gameObject.tag == "Zombie") {
-				print ("Grapple");
 				//Check for static moving zombie
 				if (coll.gameObject.GetComponent<MoveEnemy> () != null) {
 					movingEnemy = coll.gameObject.GetComponent<MoveEnemy> ();
@@ -89,7 +93,6 @@ public class Grapple : MonoBehaviour
 				if (enemy.GetComponent<ZombieMove> () != null) {
 					enemy.GetComponent<ZombieMove> ().canMove = false;
 				}
-
 				canCollide = false;
 			}
 		}

@@ -68,7 +68,7 @@ public class PlayerShoot : MonoBehaviour
 			shootBurst ();
 		}
 
-		if ((Input.GetMouseButtonDown (0)) && (!offCoolDown || !burstOffCoolDown)) {
+		if ((Input.GetMouseButtonDown (1)) && (!offCoolDown || !burstOffCoolDown)) {
 			FindObjectOfType<PlayCoolDownSound> ().playCoolDownSound ();
 		}
 
