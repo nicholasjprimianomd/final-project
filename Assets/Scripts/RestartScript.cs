@@ -8,6 +8,13 @@ public class RestartScript : MonoBehaviour
 	private GameObject timer;
 	//public bool didRestart = false;
 
+	void Start ()
+	{
+		//Delete Player Prefs
+		PlayerPrefs.DeleteKey ("Human Player");
+		PlayerPrefs.DeleteKey ("Plant Player");
+	}
+
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.R)) {

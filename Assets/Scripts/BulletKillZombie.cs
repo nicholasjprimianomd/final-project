@@ -15,7 +15,7 @@ public class BulletKillZombie : MonoBehaviour
 	void OnCollisionEnter2D (Collision2D coll)
 	{
 		if (coll.gameObject.tag == "Zombie") {
-			//gameScore.score = gameScore.score + 5;
+			gameScore.score = gameScore.score + 5;
 			//Debug.Log (gameScore);
 			Destroy (coll.gameObject);
 			Destroy (gameObject);
