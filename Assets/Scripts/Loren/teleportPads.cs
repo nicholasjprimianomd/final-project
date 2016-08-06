@@ -16,7 +16,7 @@ public class teleportPads : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D( Collider2D activator){
-		if (activator.GetComponent<teleportable> () != null) {
+		if (activator.gameObject.tag == "Bullet") {
 			activator.transform.position = partner.transform.position+ new Vector3(xcoordsLanding,ycoordsLanding,0f);
 		}
 
