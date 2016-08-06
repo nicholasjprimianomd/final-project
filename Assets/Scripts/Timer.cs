@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
 	private Scene scene;
 	//private bool failUITime = false;
 	public float score = 0;
+	public Font timerFont;
 
 	void Start ()
 	{
@@ -35,9 +36,11 @@ public class Timer : MonoBehaviour
 		font = new GUIStyle ();
 		font.fontSize = 36;
 		font.normal.textColor = Color.white;
+		font.font = timerFont;
 		fontSmall = new GUIStyle ();
 		fontSmall.fontSize = 20;
 		fontSmall.normal.textColor = Color.white;
+		fontSmall.font = timerFont;
 	}
 
 	void Update ()
