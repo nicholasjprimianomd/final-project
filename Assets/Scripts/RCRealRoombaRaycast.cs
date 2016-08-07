@@ -6,6 +6,7 @@ public class RCRealRoombaRaycast : MonoBehaviour
 
 	public float coolDownMax = 4;
 	public float minCoolDown = 1;
+	public float speed = 1f;
 	private float currentTime;
 	private float startTime;
 	private bool isActive;
@@ -66,7 +67,7 @@ public class RCRealRoombaRaycast : MonoBehaviour
 				transform.Rotate (0f, 0f, -90f);
 			}
 		} else { //if raycast hits nothing, always go forward
-			transform.position += transform.up * Time.deltaTime;
+			transform.position += transform.up * Time.deltaTime * speed;
 		}
 
 	}
