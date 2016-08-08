@@ -9,8 +9,8 @@ public class testMovingAI : MonoBehaviour {
 	//public float rotationOfPlatform = 0f;
 	//Dictates if the platform is moving along y- or x-axis.
 	public bool horizontal;
-	public bool alwaysMoving = true;
-	public buttonTrigger button;
+	//public bool alwaysMoving = true;
+	//public buttonTrigger button;
 	// Use this for initialization
 	void Start () {
 		origin = new Vector2 (transform.position.x, transform.position.y);
@@ -18,11 +18,12 @@ public class testMovingAI : MonoBehaviour {
 		if (horizontal) {
 			transform.Rotate (0f, 0f, 90f);
 		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (alwaysMoving|| (!alwaysMoving && button.isOn)){ 
+		//if (alwaysMoving|| (!alwaysMoving && button.isOn)){ 
 			
 			if (horizontal) 
 			{
@@ -47,6 +48,6 @@ public class testMovingAI : MonoBehaviour {
 	
 		}
 
-	}
+	//}
 }
 
