@@ -10,7 +10,7 @@ public class testMovingAI : MonoBehaviour {
 	//Dictates if the platform is moving along y- or x-axis.
 	public bool horizontal;
 	public bool alwaysMoving = true;
-	public buttonTrigger button;
+	//public buttonTrigger button;
 	// Use this for initialization
 	void Start () {
 		origin = new Vector2 (transform.position.x, transform.position.y);
