@@ -54,18 +54,24 @@ public class PlayerShoot : MonoBehaviour
 			burstOffCoolDown = true;
 		}
 
-		if (Input.GetKeyDown (KeyCode.R) && ammo > 0) {
-			reload ();
-		}
+		//if (Input.GetKeyDown (KeyCode.R) && ammo > 0) {
+		//	reload ();
+		//}
 		
-		// strongly recommend moving "Input.GetMouseButtonDown" etc. Input checks into Update instead
+		// Slightly ugly logic here
+
 		if (canShoot && rounds > 0 && offCoolDown) {
 			shoot ();
 		}
 
-		if (canShoot && rounds > 0 && burstOffCoolDown) {
-			shootBurst ();
-		}
+		//	if (canShoot && rounds > 0 && burstOffCoolDown) {
+		//	shootBurst ();
+		//}
+
+		//if ((Input.GetMouseButtonDown (1)) && (!offCoolDown || !burstOffCoolDown)) {
+		//	FindObjectOfType<PlayCoolDownSound> ().playCoolDownSound ();
+		//}
+
 	}
 
 	void shoot ()
