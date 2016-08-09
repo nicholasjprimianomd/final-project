@@ -15,6 +15,9 @@ public class PlayerTakeDamage : MonoBehaviour
 
 	void Update ()
 	{
+		Mathf.Clamp (currentShield, 0, maxShield);
+		Mathf.Clamp (currentHealth, 0, maxHealth);
+
 		if (currentHealth >= maxHealth) {
 			currentHealth = maxHealth;
 		}
@@ -29,6 +32,7 @@ public class PlayerTakeDamage : MonoBehaviour
 		}
 
 		incShield ();
+
 	}
 
 	void OnCollisionEnter2D (Collision2D coll)
