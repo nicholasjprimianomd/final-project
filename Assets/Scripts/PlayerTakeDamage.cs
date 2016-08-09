@@ -44,6 +44,15 @@ public class PlayerTakeDamage : MonoBehaviour
 				currentHealth -= 1;
 			}
 		}
+		if (coll.gameObject.tag == "Fire") {
+			if (currentShield > 0) {
+				currentShield -= 1;
+			} else {
+				currentHealth -= 1;
+			}
+		}
+
+
 	}
 
 	void incShield ()
