@@ -13,7 +13,7 @@ public class PlayerTakeDamage : MonoBehaviour
 	public float maxShield = 5;
 	public float shieldRegenRate = 1;
 	public float currentShield = 100;
-	private AudioSource audio;
+	public AudioSource audio;
 
 	void Start ()
 	{
