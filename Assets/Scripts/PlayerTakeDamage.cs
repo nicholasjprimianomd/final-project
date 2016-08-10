@@ -2,7 +2,8 @@
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
-using UnityEditor;
+
+//using UnityEditor;
 
 public class PlayerTakeDamage : MonoBehaviour
 {
