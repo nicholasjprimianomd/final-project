@@ -11,6 +11,7 @@ public class RCRealRoombaRaycast : MonoBehaviour
 	private float startTime;
 	private bool isActive;
 	private bool isTiming;
+	public Vector3 currentDirection ;
 
 
 	void Start ()
@@ -18,6 +19,7 @@ public class RCRealRoombaRaycast : MonoBehaviour
 
 		isActive = true;
 		isTiming = false;
+		currentDirection = transform.up;
 	}
 
 	void Update ()
@@ -57,17 +59,25 @@ public class RCRealRoombaRaycast : MonoBehaviour
 		}
 
 
-		RaycastHit2D roombahit = Physics2D.Raycast (transform.position, transform.up, 0.4f); //shoots raycast
+		RaycastHit2D roombahit = Physics2D.Raycast (transform.position, currentDirection, 2f); //shoots raycast
+
 
 		if (roombahit.collider != null && roombahit.collider.gameObject.tag != "Zombie") { //if raycast hits something 
-			float randomNumber = Random.Range (0f, 1f); //turn randomly 90 degreees left or right
-			if (randomNumber > 0.5f) {
-				transform.Rotate (0f, 0f, 90f);
-			} else {
-				transform.Rotate (0f, 0f, -90f);
-			}
-		} else { //if raycast hits nothing, always go forward
-			transform.position += transform.up * Time.deltaTime * speed;
+			int randomNumber = Random.Range (0, 4); //turn randomly 90 degreees left or right; since we're using objects (the spheres) 
+			//that have children lasers attached to them we can't use transform.rotate to make this function work, 
+			//thus we must change the "currentDirection" according to the transform.up and transform.right axes
+			if (randomNumber == 0) {
+				currentDirection = transform.right ;
+			} if (randomNumber == 1) {
+				currentDirection = -transform.right;
+			}  if (randomNumber == 2) {
+				currentDirection = transform.up;
+			}  if (randomNumber == 3) {
+				currentDirection = -transform.up;
+			} //since we've only got four options it's best to use the integer generator in Random.Range instead of the float generator 
+			//(that could generate tons of options from a range of 0f to 1f)
+		} else { //if raycast hits nothing, always go in the current direction it was headed in
+			transform.position += currentDirection * Time.deltaTime * speed;
 		}
 
 	}
