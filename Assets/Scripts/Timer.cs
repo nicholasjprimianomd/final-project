@@ -64,8 +64,8 @@ public class Timer : MonoBehaviour
 			GUI.Box (new Rect (10, 10, 125, 25), "Game Timer : " + time, fontSmall);
 			GUI.Box (new Rect (10, 35, 125, 25), "Score : " + timeScore.ToString (), fontSmall);
 		} else {
-			GUI.Label (new Rect (400, 280, 125, 200), "Game Timer : " + time, font);
-			GUI.Label (new Rect (450, 330, 125, 200), "Score : " + timeScore.ToString (), font);
+			GUI.Label (new Rect (450, 330, 125, 200), "Game Timer : " + time, font);
+			GUI.Label (new Rect (570, 370, 125, 200), "Score : " + timeScore.ToString (), font);
 		}
 		//} else if (win.playerWin && !failUITime) {
 		//	GUI.Label (new Rect (709, 341, 125, 200), time, font);
