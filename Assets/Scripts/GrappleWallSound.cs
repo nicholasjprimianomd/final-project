@@ -4,15 +4,15 @@ using UnityEngine.UI;
 
 public class GrappleWallSound : MonoBehaviour
 {
-	public AudioSource audio;
+	public AudioSource audioClip;
 
 	void Start ()
 	{
-		audio = GetComponent<AudioSource> ();
+		audioClip = GetComponent<AudioSource> ();
 	}
 
 	public void playLandSound ()
 	{
-		audio.Play ();
+		audioClip.Play ();
 	}
 }

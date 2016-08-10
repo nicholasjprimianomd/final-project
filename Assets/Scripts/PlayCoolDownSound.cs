@@ -3,16 +3,16 @@ using System.Collections;
 
 public class PlayCoolDownSound : MonoBehaviour
 {
-	public AudioSource audio;
+	public AudioSource audioClip;
 	// Use this for initialization
 	void Start ()
 	{
-		audio = GetComponent <AudioSource> ();
+		audioClip = GetComponent <AudioSource> ();
 	}
 
 
 	public void playCoolDownSound ()
 	{
-		audio.Play ();
+		audioClip.Play ();
 	}
 }
