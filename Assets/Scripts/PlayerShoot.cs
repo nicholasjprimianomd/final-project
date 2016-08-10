@@ -64,13 +64,13 @@ public class PlayerShoot : MonoBehaviour
 			shoot ();
 		}
 
-		if (canShoot && rounds > 0 && burstOffCoolDown) {
-			shootBurst ();
-		}
+		//	if (canShoot && rounds > 0 && burstOffCoolDown) {
+		//	shootBurst ();
+		//}
 
-		if ((Input.GetMouseButtonDown (1)) && (!offCoolDown || !burstOffCoolDown)) {
-			FindObjectOfType<PlayCoolDownSound> ().playCoolDownSound ();
-		}
+		//if ((Input.GetMouseButtonDown (1)) && (!offCoolDown || !burstOffCoolDown)) {
+		//	FindObjectOfType<PlayCoolDownSound> ().playCoolDownSound ();
+		//}
 
 	}
 
