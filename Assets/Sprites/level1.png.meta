@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 906d8c3464debff4bbe5022f9a6a490f
-timeCreated: 1470841166
+timeCreated: 1470849371
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -105,22 +105,27 @@ TextureImporter:
     - name: level1_2
       rect:
         serializedVersion: 2
-        x: 833
-        y: 591
-        width: 250
-        height: 166
+        x: 806
+        y: 579
+        width: 296
+        height: 164
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 125, y: 55}
-        - {x: 102, y: 67}
-        - {x: 30, y: 83}
-        - {x: -84, y: 83}
-        - {x: -125, y: 69}
-        - {x: -125, y: -56}
-        - {x: -102, y: -83}
-        - {x: 125, y: -83}
+      - - {x: -148, y: 82}
+        - {x: -148, y: 22}
+        - {x: -122, y: -15}
+        - {x: -65, y: -82}
+        - {x: 76, y: -82}
+        - {x: 86, y: -73}
+        - {x: 89, y: -62}
+        - {x: 90, y: -81}
+        - {x: 92, y: -82}
+        - {x: 143, y: -82}
+        - {x: 148, y: -79}
+        - {x: 148, y: 41}
+        - {x: 133, y: 82}
     - name: level1_3
       rect:
         serializedVersion: 2
