@@ -7,32 +7,18 @@ using UnityEngine.UI;
 public class Goto : MonoBehaviour
 {
 
-	public Button buttonPrefab;
-
-
-	void OnMouseDown ()
+	public void loadStart ()
 	{
-		//	Application.LoadLevel(4);
+		SceneManager.LoadScene ("Start");
 	}
 
-	//	void Start {
-	//
-	//		Button.onClick.AddListener (
-	//			delegate {
-	//				GoTo ();
-	//			}
-	//		);
-	//
-	//	}
-	//
-	//	public void GoTo() {
-	//		if (gameObject.name == "Instructions") {
-	//			Application.LoadLevel ("Instructions");
-	//		} else if (gameObject.name == "Credits") {
-	//			Application.LoadLevel ("Credits");
-	//		} else if (gameObject.name == "Start") {
-	//			Application.LoadLevel ("Start");
-	//		}
-	//	}
+	public void loadInstruction ()
+	{
+		SceneManager.LoadScene ("Instructions");
+	}
 
+	public void loadCredits ()
+	{
+		SceneManager.LoadScene ("Credits");
+	}
 }
