@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayCoolDownSound : MonoBehaviour
 {
-	private AudioSource audio;
+	public AudioSource audio;
 	// Use this for initialization
 	void Start ()
 	{
