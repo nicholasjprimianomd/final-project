@@ -32,7 +32,7 @@ public class PlayerShoot : MonoBehaviour
 
 	public float shootCoolDown = .5f;
 
-	private bool burstOffCoolDown;
+	//private bool burstOffCoolDown;
 	private float burstCoolDown;
 	public float burstCoolDownTime = 2f;
 
@@ -55,7 +55,7 @@ public class PlayerShoot : MonoBehaviour
 		}
 
 		if (currentTime - burstCoolDown > burstCoolDownTime) {
-			burstOffCoolDown = true;
+			//burstOffCoolDown = true;
 		}
 
 		//if (Input.GetKeyDown (KeyCode.R) && ammo > 0) {
@@ -122,7 +122,7 @@ public class PlayerShoot : MonoBehaviour
 				//rounds -= 1;
 			}
 
-			burstOffCoolDown = false;
+			//burstOffCoolDown = false;
 			burstCoolDown = Time.time;
 		}
 	}
