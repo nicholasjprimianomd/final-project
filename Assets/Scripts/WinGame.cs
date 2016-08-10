@@ -26,7 +26,7 @@ public class WinGame : MonoBehaviour {
 		}
 		if (didWin == true) {
 
-			SceneManager.LoadScene (0);
+			SceneManager.LoadScene (3);
 
 		}
 	}
