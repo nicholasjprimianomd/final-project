@@ -73,7 +73,7 @@ public class PlayerShoot : MonoBehaviour
 		//}
 
 		if ((Input.GetMouseButtonDown (0)) && (!offCoolDown)) {
-			if (!FindObjectOfType<PlayCoolDownSound> ().audio.isPlaying) {
+			if (!FindObjectOfType<PlayCoolDownSound> ().audioClip.isPlaying) {
 				FindObjectOfType<PlayCoolDownSound> ().playCoolDownSound ();
 			}
 		}
