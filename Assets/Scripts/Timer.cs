@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
 
 	void Update ()
 	{
-		if (scene.name == "Game") {
+		if (scene.name == "Grapple_Test") {
 			timer += Time.deltaTime;
 		}
 
@@ -60,7 +60,7 @@ public class Timer : MonoBehaviour
 		float timeScore = Mathf.FloorToInt (timer);
 		timeScore += score;
 
-		if (scene.name == "Game") {
+		if (scene.name == "Grapple_Test") {
 			GUI.Box (new Rect (10, 10, 125, 25), "Game Timer : " + time, fontSmall);
 			GUI.Box (new Rect (10, 35, 125, 25), "Score : " + timeScore.ToString (), fontSmall);
 		} else {

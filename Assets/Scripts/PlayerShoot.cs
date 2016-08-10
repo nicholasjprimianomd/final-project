@@ -4,6 +4,7 @@ using System.Collections;
 // why were you importing these namespaces?
 //using System.Diagnostics;
 //using UnityEngine.Rendering;
+using System.Runtime.InteropServices;
 
 
 public class PlayerShoot : MonoBehaviour
@@ -35,10 +36,13 @@ public class PlayerShoot : MonoBehaviour
 	private float burstCoolDown;
 	public float burstCoolDownTime = 2f;
 
+
+	public float incCooldown = .05f;
+
 	void Start ()
 	{
 		offCoolDown = true;
-		burstOffCoolDown = true;
+		//burstOffCoolDown = true;
 	}
 
 	void Update ()
@@ -68,9 +72,11 @@ public class PlayerShoot : MonoBehaviour
 		//	shootBurst ();
 		//}
 
-		//if ((Input.GetMouseButtonDown (1)) && (!offCoolDown || !burstOffCoolDown)) {
-		//	FindObjectOfType<PlayCoolDownSound> ().playCoolDownSound ();
-		//}
+		if ((Input.GetMouseButtonDown (0)) && (!offCoolDown)) {
+			if (!FindObjectOfType<PlayCoolDownSound> ().audio.isPlaying) {
+				FindObjectOfType<PlayCoolDownSound> ().playCoolDownSound ();
+			}
+		}
 
 	}
 
@@ -84,6 +90,8 @@ public class PlayerShoot : MonoBehaviour
 
 			offCoolDown = false;
 			coolDown = Time.time;
+
+			shootCoolDown += incCooldown;
 			//rounds -= 1;
 		}
 	}
