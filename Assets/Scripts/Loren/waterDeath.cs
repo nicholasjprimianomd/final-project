@@ -10,6 +10,8 @@ public class waterDeath : MonoBehaviour
 	public float coolDown = .25f;
 	public int waterDamage = 3;
 
+
+
 	void Update ()
 	{
 		currentTime = Time.time;
@@ -33,10 +35,20 @@ public class waterDeath : MonoBehaviour
 		if (currentTime - startTime > coolDown) {
 			if (activator.GetComponent<PlayerTakeDamage> ().currentShield > waterDamage) {
 				activator.GetComponent<PlayerTakeDamage> ().currentShield -= waterDamage * Mathf.CeilToInt (Time.deltaTime)/*Mathf.CeilToInt (Time.deltaTime / 100)*/;
-
 				startTime = currentTime;
+
+				if (!activator.GetComponent<AudioSource> ().isPlaying) {
+					activator.GetComponent<AudioSource> ().Play ();
+				}
+
+
 			} else {
 				activator.GetComponent<PlayerTakeDamage> ().currentHealth -= waterDamage * Mathf.CeilToInt (Time.deltaTime) /*Mathf.CeilToInt (Time.deltaTime / 100)*/;
+
+				if (!activator.GetComponent<AudioSource> ().isPlaying) {
+					activator.GetComponent<AudioSource> ().Play ();
+				}
+
 
 				startTime = currentTime;
 			}
