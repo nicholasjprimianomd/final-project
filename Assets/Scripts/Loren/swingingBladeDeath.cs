@@ -11,6 +11,5 @@ public class swingingBladeDeath : MonoBehaviour
 			Destroy (activator.gameObject);
 		}
 
-		print ("Hit");
 	}
 }
