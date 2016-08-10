@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GrappleWallSound : MonoBehaviour
 {
-	private AudioSource audio;
+	public AudioSource audio;
 
 	void Start ()
 	{
