@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Experimental.Networking;
 
-public class Orb : MonoBehaviour {
+public class Orb : MonoBehaviour
+{
 
 	public GameObject bullet;
 	public Transform spawnPoint;
@@ -12,7 +14,8 @@ public class Orb : MonoBehaviour {
 	private bool canShoot;
 	private float coolDown;
 
-	void Awake(){
+	void Awake ()
+	{
 		canShoot = true;
 	}
 
@@ -20,16 +23,24 @@ public class Orb : MonoBehaviour {
 	{
 		currentTime = Time.time;
 
-		if(currentTime - coolDown > 3){
+		if (currentTime - coolDown > 3) {
 			canShoot = true;
 		}
+
+		if (Input.GetKeyDown (KeyCode.Q) && !canShoot) {
+			if (!FindObjectOfType<PlayCoolDownSound> ().audio.isPlaying) {
+				FindObjectOfType<PlayCoolDownSound> ().playCoolDownSound ();
+			}
+		}
+
+
 
 		orb ();
 	}
 
-	void orb()
+	void orb ()
 	{
-		if (Input.GetKeyDown(KeyCode.Q) && canShoot) {
+		if (Input.GetKeyDown (KeyCode.Q) && canShoot) {
 			canShoot = false;
 			coolDown = Time.time;
 			Vector2 bulletDirection = (spawnPoint.position - transform.position).normalized;
