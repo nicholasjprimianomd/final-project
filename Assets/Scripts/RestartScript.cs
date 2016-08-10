@@ -18,7 +18,7 @@ public class RestartScript : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.R)) {
-			SceneManager.LoadScene ("Game");
+			SceneManager.LoadScene ("Grapple_Test");
 			//restart game timer
 			timer = GameObject.FindGameObjectWithTag ("Timer");
 			Timer endTime = timer.GetComponent<Timer> ();
