@@ -22,3 +22,6 @@ public class Goto : MonoBehaviour
 		SceneManager.LoadScene ("Credits");
 	}
 }
+
+
+// merging screens into working game
