@@ -13,11 +13,11 @@ public class PlayerTakeDamage : MonoBehaviour
 	public float maxShield = 5;
 	public float shieldRegenRate = 1;
 	public float currentShield = 100;
-	public AudioSource audio;
+	public AudioSource audioClip;
 
 	void Start ()
 	{
-		audio = GetComponent<AudioSource> ();
+		audioClip = GetComponent<AudioSource> ();
 	}
 
 	void Update ()
@@ -42,13 +42,13 @@ public class PlayerTakeDamage : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "Zombie") {
 			if (currentShield > 0) {
-				if (!audio.isPlaying) {
-					audio.Play ();
+				if (!audioClip.isPlaying) {
+					audioClip.Play ();
 				}
 				currentShield -= 1;
 			} else {
-				if (!audio.isPlaying) {
-					audio.Play ();
+				if (!audioClip.isPlaying) {
+					audioClip.Play ();
 				}
 				currentHealth -= 1;
 			}

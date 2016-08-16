@@ -24,9 +24,9 @@ public class testMovingAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		Physics2D.IgnoreLayerCollision (11, 0);
-		Physics2D.IgnoreLayerCollision (11, 9);
-		Physics2D.IgnoreLayerCollision (11, 8);
+		Physics2D.IgnoreLayerCollision (12, 12);
+		Physics2D.IgnoreLayerCollision (12, 9);
+		Physics2D.IgnoreLayerCollision (12, 8);
 			if (horizontal) 
 			{
 				if (this.transform.position.x > origin.x + moveLengthFromOrigin || this.transform.position.x < origin.x ) 

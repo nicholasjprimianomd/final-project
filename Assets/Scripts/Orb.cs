@@ -28,7 +28,7 @@ public class Orb : MonoBehaviour
 		}
 
 		if (Input.GetKeyDown (KeyCode.Q) && !canShoot) {
-			if (!FindObjectOfType<PlayCoolDownSound> ().audio.isPlaying) {
+			if (!FindObjectOfType<PlayCoolDownSound> ().audioClip.isPlaying) {
 				FindObjectOfType<PlayCoolDownSound> ().playCoolDownSound ();
 			}
 		}

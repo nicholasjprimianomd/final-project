@@ -24,4 +24,8 @@ public class Goto : MonoBehaviour
 }
 
 
+<<<<<<< HEAD
 // this is a comment to say that I am fixing this!
+=======
+// merging screens into working game
+>>>>>>> oliviascreens

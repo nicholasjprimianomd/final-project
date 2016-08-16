@@ -20,6 +20,7 @@ public class waterDeath : MonoBehaviour
 
 	void OnTriggerStay2D (Collider2D activator)
 	{
+		Debug.Log ("Something");
 		if (activator.GetComponent<PlayerGrapple> () != null && activator.gameObject.GetComponent<PlayerGrapple> ().isLerping == false) {
 			takeDamage (activator);
 		}

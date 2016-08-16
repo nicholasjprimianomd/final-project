@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq.Expressions;
 using System;
+using System.Configuration;
 
 
 public class Timer : MonoBehaviour
@@ -63,7 +64,10 @@ public class Timer : MonoBehaviour
 		if (scene.name == "Grapple_Test") {
 			GUI.Box (new Rect (10, 10, 125, 25), "Game Timer : " + time, fontSmall);
 			GUI.Box (new Rect (10, 35, 125, 25), "Score : " + timeScore.ToString (), fontSmall);
-		} else {
+		} else if (scene.name == "Death Scene") {
+			GUI.Label (new Rect (450, 330, 125, 200), "Game Timer : " + time, font);
+			GUI.Label (new Rect (570, 370, 125, 200), "Score : " + timeScore.ToString (), font);
+		} else if (scene.name == "WinScene") {
 			GUI.Label (new Rect (450, 330, 125, 200), "Game Timer : " + time, font);
 			GUI.Label (new Rect (570, 370, 125, 200), "Score : " + timeScore.ToString (), font);
 		}
